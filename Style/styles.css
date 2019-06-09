@@ -1,0 +1,436 @@
+html, body {
+	min-width: 500px;
+	margin: 0;
+	padding: 0;
+}
+
+/*todo header*/
+header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 120px;
+	background: white;
+	box-shadow: 0 2px 5px 2px #999999;
+	-moz-box-shadow: 0 2px 5px 2px #999999;
+	-webkit-box-shadow: 0 2px 5px 2px #999999;
+}
+
+#headerLogo {
+	position: relative;
+	width: 500px;
+	height: 62px;
+	margin: 30px 30px 30px 100px;
+}
+
+#headerButtons {
+	float: right;
+	margin-right: 275px;
+	margin-top: 15px;
+}
+
+.hButtons {
+	position: relative;
+	border: none;
+	outline: none;
+	font-family: "Bookman Old Style", serif;
+	font-weight: bold;
+	margin: 18px 0 18px 25px;
+	width: fit-content;
+	height: 50px;
+	font-size: 30px;
+	background: transparent;
+}
+
+.hButtons:hover {
+	text-decoration: none;
+	border-bottom: 7px solid #ffff00;
+}
+
+.yellowBigButton {
+	font-family: "Bookman Old Style", serif;
+	border: none;
+	outline: none;
+	padding: 15px;
+	border-radius: 4px;
+	background-color: #ffff00;
+}
+#consultButton {
+	position: relative;
+	float: right;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 80px;
+	margin-right: -140px;
+	font-size: 18px;
+}
+
+#makeOrderBtn {
+	margin-top: 40px;
+	width: 350px;
+	font-size: 18px;
+	height: 55px;
+}
+
+#consultButton:active, #makeOrderBtn:active {
+	background-color: #e6e600;
+}
+
+/*todo main part*/
+main {
+	text-align: center;
+	margin-top: 120px;
+	width: 100%;
+	min-height: 100%;
+}
+
+#upperBackgroundCont {
+	width: 100%;
+	height: 600px;
+	background-image: url("../images/HeaderBackground.png");
+	background-size: 100%;
+	background-position-y: 45%;
+}
+
+@media all and (max-width: 1500px) {
+	#upperBackgroundCont {
+		background-size: 1500px;
+	}
+}
+
+#backgroundKravchukCoin {
+	text-align: center;
+	height: 600px;
+	background-image: url("../images/KravchukCoin.png");
+	background-repeat: no-repeat;
+	background-size: 612px;
+	background-position-y: 100%;
+	background-position-x: 50%;
+}
+
+#weSuggestTextHolder {
+	background-color: rgba(255, 255, 255, 0.85);
+	height: 230px;
+	padding: 25px;
+}
+
+#weSuggestText {
+	font-family: "Bookman Old Style", serif;
+	font-size: 50px;
+	padding: 50px;
+}
+
+#suggestWrapper {
+	width: 100%;
+	background-color: rgba(255, 255, 0, 0.85);
+}
+
+#weSuggestDiv {
+	display: inline-block;
+	height: 250px;
+}
+
+.suggestionDiv {
+	float: left;
+	width: 270px;
+	margin: 40px 15px 15px 15px;
+}
+
+.suggestionTextH {
+	font-family: "Bookman Old Style", serif;
+	padding: 10px;
+}
+
+.suggestionLine {
+	margin-left: 110px;
+	margin-right: 110px;
+	margin-top: -15px;
+	border-color: #adadad;
+}
+
+.suggestionText {
+	font-family: "Sitka Text", serif;
+	font-size: 18px;
+}
+
+#whiteEmptiness {
+	width: 100%;
+	height: 66px;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+#kravchukMarketingDiv {
+	text-align: center;
+	margin-top: -40px;
+	width: 100%;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: 100% 500px;
+	background-image: url("../images/UnityPower.png");
+}
+
+#kravchukTag {
+	padding-top: 220px;
+	font-family: "Sitka Heading", serif;
+	font-size: 60px;
+	color: #ffff00;
+}
+
+#kravchukText {
+	margin-top: -25px;
+	font-weight: bold;
+	font-family: "Sitka Heading", serif;;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+/*todo about marketing details*/
+#marketingDetails, #marketingDetailsUnfold {
+	display: inline-block;
+	text-align: center;
+	width: 879px;
+	height: 592px;
+	margin-top: 50px;
+}
+
+#aboutMarketing {
+	background-image: url("../images/ProMarketing.png");
+}
+#aboutSEO {
+	background-image: url("../images/SEO.png");
+}
+#aboutSMM {
+	background-image: url("../images/SMM.png");
+}
+.detailsM {
+	text-align: center;
+	float: left;
+	width: 293px;
+	height: 592px;
+	margin-left: -2px;
+}
+
+.detailsContent {
+	text-align: left;
+	display: inline-block;
+}
+
+.blogTag {
+	font-family: "Sitka Small", serif;
+	color: #ffffff;
+	font-size: 12px;
+	padding-top: 15px;
+}
+
+.photosInDetails {
+	margin-top: 10px;
+}
+
+.headerDetails {
+	text-align: center;
+	font-weight: bold;
+	border: 3px solid #ffff00;
+	color: #ffff00;
+	padding: 10px;
+	font-size: 16px;
+	width: 205px;
+	height: 47px;
+}
+
+.textDetails {
+	font-family: "Sitka Small", serif;
+	color: #ffffff;
+	font-size: 15px;
+}
+.unfold {
+	color: #797777;
+	font-size: 11px;
+}
+
+/*todo unfolded part*/
+#aboutMarketingUnfold {
+	background-image: url("../images/proMarketingUnfold.png");
+}
+#aboutSEOUnfold {
+	background-image: url("../images/SEOUnfold.png");
+}
+#aboutSMMUnfold {
+	background-image: url("../images/SMMUnfold.png");
+}
+
+#marketingDetailsUnfold {
+	display: none;
+}
+
+.textDetailsUnfold, .yellowText {
+	font-family: "Sitka Small", serif;
+	font-size: 10px;
+}
+.textDetailsUnfold {
+	color: #ffffff;
+}
+.yellowText {
+	font-weight: bold;
+	color: #ffff00;
+}
+
+
+/*todo before footer part*/
+
+#whyUsHeader {
+	margin-top: 120px;
+	font-family: "Sitka Small", serif;
+	font-size: 45px;
+}
+
+#whyUsDiv {
+	margin-top: -35px;
+	width: 99.9%;
+	height: 1500px;
+	background-image: url("../images/YellowRectangles.png");
+	background-size: 100%;
+	background-position-y: 95%;
+	background-repeat: repeat-x;
+	border: 1px solid transparent;
+}
+
+#personalApproach {
+	text-align: left;
+	width: 500px;
+	margin-top: 160px;
+	margin-bottom: 20px;
+	margin-left: 16%;
+}
+
+#system {
+	float: right;
+	right: 0;
+	width: 500px;
+	text-align: right;
+	margin-top: 25px;
+	margin-right: 17%;
+}
+
+#businessUnderKey {
+	width: 500px;
+	text-align: left;
+	margin-top: 275px;
+	margin-left: 23%;
+}
+
+.whyUsHeaders {
+	font-family: "Sitka Small", serif;
+	font-size: 32px;
+}
+
+.whyUsText {
+	font-family: "Sitka Small", serif;
+	padding-top: 15px;
+	font-size: 20px;
+}
+
+.whyUsLineLeft {
+	border: 0.5px solid black;
+	margin-right: 400px;
+	margin-top: -20px;
+}
+
+#whyUsLineRight{
+	border: 0.5px solid black;
+	margin-left: 400px;
+	margin-top: -20px;
+}
+
+#contactsContainer {
+	margin-top: -150px;
+	height: 500px;
+	width: 100%;
+}
+
+#leaveContactDetails {
+	float: left;
+	margin-left: 20%;
+	margin-top: -30px;
+}
+
+#biggerTextQuestion {
+	font-family: "Sitka Text", serif;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#leaveContactText {
+	font-family: "Sitka Text", serif;
+	font-size: 23px;
+	font-weight: bold;
+	margin-top: -20px;
+}
+
+.inputBox {
+	border: 1px solid black;
+	border-radius: 4px;
+	font-family: "Sitka Small", serif;
+	font-size: 18px;
+	width: 380px;
+	height: 40px;
+	padding: 5px;
+	margin-top: 5px;
+}
+.inputBox:invalid {
+	background-color: #ffe6e6;
+}
+#yourPhoneNumber {
+	margin-top: 13px;
+}
+
+#ourContacts {
+	float: right;
+	text-align: left;
+	margin-top: 200px;
+	width: 680px;
+	height: 150px;
+	background-color: #ffff00;
+}
+
+#topContainer {
+	margin-top: 20px;
+}
+
+.dataContainer {
+	margin-left: 40px;
+}
+
+.contactInfo {
+	font-family: "Sitka Text", serif;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: -5px;
+}
+
+#dataHasBeenSent {
+	text-align: center;
+	width: 400px;
+	height: 150px;
+	border: 1px solid transparent;
+	margin-top: 40px;
+	background-image: url("../images/TickIcon.png");
+	background-repeat: no-repeat;
+	background-size: 39%;
+	background-position-x: 50%;
+}
+
+#headerDataSent {
+	font-family: "Sitka Small", serif;
+	font-size: 26px;
+}
+
+#footerBackground {
+	position: relative;
+	margin-top: -100px;
+	height: 180px;
+	background-image: url("../images/bigTextLogo.png");
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-size: 80%;
+}
