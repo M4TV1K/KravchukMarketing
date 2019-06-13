@@ -4,7 +4,7 @@ html, body {
 	padding: 0;
 }
 
-/*todo header*/
+/*HEADER PART*/
 header {
 	position: fixed;
 	left: 0;
@@ -43,9 +43,8 @@ header {
 	background: transparent;
 }
 
-.hButtons:hover {
-	text-decoration: none;
-	border-bottom: 7px solid #ffff00;
+.hButtons:active {
+	color: #e6e600;
 }
 
 .yellowBigButton {
@@ -77,7 +76,7 @@ header {
 	background-color: #e6e600;
 }
 
-/*todo main part*/
+/*MAIN PART*/
 main {
 	text-align: center;
 	margin-top: 120px;
@@ -91,12 +90,6 @@ main {
 	background-image: url("../images/HeaderBackground.png");
 	background-size: 100%;
 	background-position-y: 45%;
-}
-
-@media all and (max-width: 1500px) {
-	#upperBackgroundCont {
-		background-size: 1500px;
-	}
 }
 
 #backgroundKravchukCoin {
@@ -185,7 +178,7 @@ main {
 	color: #ffffff;
 }
 
-/*todo about marketing details*/
+/*MARKETING DETAILS*/
 #marketingDetails, #marketingDetailsUnfold {
 	display: inline-block;
 	text-align: center;
@@ -248,7 +241,7 @@ main {
 	font-size: 11px;
 }
 
-/*todo unfolded part*/
+/*UNFOLDED PART*/
 #aboutMarketingUnfold {
 	background-image: url("../images/proMarketingUnfold.png");
 }
@@ -276,8 +269,8 @@ main {
 }
 
 
-/*todo before footer part*/
 
+/*BEFORE FOOTER PART*/
 #whyUsHeader {
 	margin-top: 120px;
 	font-family: "Sitka Small", serif;
@@ -377,9 +370,16 @@ main {
 	padding: 5px;
 	margin-top: 5px;
 }
+
 .inputBox:invalid {
 	background-color: #ffe6e6;
 }
+
+.inputBox:focus {
+	outline: 3px solid yellow;
+	background: white;
+}
+
 #yourPhoneNumber {
 	margin-top: 13px;
 }
@@ -433,4 +433,16 @@ main {
 	background-repeat: no-repeat;
 	background-position-x: 50%;
 	background-size: 80%;
+}
+
+
+/*TODO MAKE IT BEHAVE WELL DURING RESIZING*/
+
+
+
+
+@media all and (max-width: 1500px) {
+	#upperBackgroundCont {
+		background-size: 1500px;
+	}
 }

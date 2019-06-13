@@ -2,6 +2,8 @@ let textDetails, blogTag;
 let detailsDiv, detailsDivUnfold;
 let yourName, yourPhoneNumber;
 
+let mainBtn, suggestionBtn, blogBtn, btnContacts;
+
 function changeColor(color) {
     textDetails.forEach((element) => {
         element.style.color = color;
@@ -15,11 +17,32 @@ function checkInput(input) {
     return input.value.length > 0;
 }
 
-function addEventListenersToButton() {
-    let contactBtn = document.querySelector('#btnContacts');
-    contactBtn.addEventListener('click', () => {
-        window.scrollBy(0,3426);
+function addEventListenersToButtons() {
+    mainBtn = document.querySelector('#mainBtn');
+    mainBtn.addEventListener('click', () => {
+        window.scrollTo(0, 0);
     });
+
+    suggestionBtn = document.querySelector('#suggestionsBtn');
+    suggestionBtn.addEventListener('click', ()=> {
+        window.scrollTo(0, 597);
+    });
+
+    blogBtn = document.querySelector('#blogBtn');
+    blogBtn.addEventListener('click', () => {
+        window.scrollTo(0,1205);
+    });
+
+    btnContacts = document.querySelector('#btnContacts');
+    btnContacts.addEventListener('click', () => {
+        window.scrollTo(0,3426);
+    });
+
+    let btn = document.querySelector('#consultButton');
+    btn.addEventListener('click', () => {
+        window.scrollTo(0, 3426);
+        yourName.focus();
+    })
 }
 
 window.onload = () => {
@@ -63,9 +86,28 @@ window.onload = () => {
         }
     });
 
-    addEventListenersToButton();
+    addEventListenersToButtons();
+    window.scrollTo(0,5);
 };
 
+
+function highlightButton(btnToLightUp) {
+    let allButtons = document.querySelectorAll('.hButtons');
+    allButtons.forEach((btn) => {
+        btn.style.border = 'none';
+    });
+    btnToLightUp.style.borderBottom = '7px solid #ffff00';
+}
+
 window.onscroll = () => {
-    console.log(window.scrollY);
+    let scrollY = window.scrollY;
+    console.log("Scroll: " + scrollY);
+    if (scrollY < 597) highlightButton(mainBtn);
+    else if (scrollY >= 597 && scrollY < 1205) highlightButton(suggestionBtn);
+    else if (scrollY >= 1205 && scrollY < 3300) highlightButton(blogBtn);
+    else highlightButton(btnContacts);
+};
+
+window.onresize = () => {
+    console.log("Width: " + window.innerWidth);
 };
