@@ -4,6 +4,9 @@ let yourName, yourPhoneNumber;
 
 let mainBtn, suggestionBtn, blogBtn, btnContacts;
 
+let headerButtons;
+let displayingUnfold;
+
 function changeColor(color) {
     textDetails.forEach((element) => {
         element.style.color = color;
@@ -42,7 +45,17 @@ function addEventListenersToButtons() {
     btn.addEventListener('click', () => {
         window.scrollTo(0, 3426);
         yourName.focus();
-    })
+    });
+
+    /*TODO NEW FEATURE*/
+    btn = document.querySelector('#unfoldButton');
+    btn.addEventListener('click', () => {
+        console.log(headerButtons.style.display);
+        if (headerButtons.style.display === 'inline')
+            headerButtons.style.display = 'none';
+        else
+            headerButtons.style.display = 'inline';
+    });
 }
 
 window.onload = () => {
@@ -86,6 +99,11 @@ window.onload = () => {
         }
     });
 
+    /*NEEEEWWWW CODE*/
+    headerButtons = document.querySelector('#headerButtons');
+    if (window.innerWidth > 965) headerButtons.style.display = 'inline';
+    else headerButtons.style.display = 'none';
+
     addEventListenersToButtons();
     window.scrollTo(0,5);
 };
@@ -109,5 +127,8 @@ window.onscroll = () => {
 };
 
 window.onresize = () => {
-    console.log("Width: " + window.innerWidth);
+    let width = window.innerWidth;
+    console.log("Width: " + width);
+    if (width > 965) headerButtons.style.display = 'inline';
+    else headerButtons.style.display = 'none';
 };

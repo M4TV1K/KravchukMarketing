@@ -19,9 +19,18 @@ header {
 
 #headerLogo {
 	position: relative;
-	width: 500px;
+	min-width: 475px;
+	width: 26.3%;
 	height: 62px;
-	margin: 30px 30px 30px 100px;
+	margin: 30px 30px 30px 3.5%;
+}
+/*small version*/
+#headerLogoSmallCoin {
+	position: relative;
+	display: none;
+	width: 76px;
+	height: 75px;
+	margin: 25px 30px 30px 11.3%;
 }
 
 #headerButtons {
@@ -55,14 +64,31 @@ header {
 	border-radius: 4px;
 	background-color: #ffff00;
 }
+
 #consultButton {
 	position: relative;
 	float: right;
 	height: 50px;
 	margin-top: 20px;
-	margin-left: 80px;
+	margin-left: 60px;
 	margin-right: -140px;
 	font-size: 18px;
+}
+
+#unfoldHeaderContainer {
+	display: none;
+	width: 100%;
+}
+
+#consultButtonReal {
+	font-size: 18px;
+}
+#unfoldButton {
+	background-image: url("../images/UnfoldButton.png");
+	background-color: transparent;
+	border: none;
+	outline: none;
+	background-size: 100%;
 }
 
 #makeOrderBtn {
@@ -92,6 +118,131 @@ main {
 	background-position-y: 45%;
 }
 
+
+/*TODO RESIZE*/
+@media all and (max-width: 1785px) {
+	#headerLogo {
+		margin-left: 1%;
+	}
+	#consultButton {
+		margin-right: -250px;
+	}
+}
+
+@media all and (max-width: 1630px) {
+	#consultButton {
+		margin-left: 15px;
+	}
+}
+
+@media all and (max-width: 1560px) {
+	.hButtons {
+		margin-left: 5px;
+	}
+}
+
+@media all and (max-width: 1478px){
+	#headerLogo {
+		display: none;
+	}
+	#headerLogoSmallCoin {
+		display: inline;
+	}
+	#consultButton {
+		margin-left: 60px;
+	}
+	.hButtons {
+		margin-left: 25px;
+	}
+}
+
+@media all and (max-width: 1405px) {
+	#headerLogoSmallCoin {
+		margin-left: 3.5%;
+	}
+	/*TODO TUT*/
+	#upperBackgroundCont {
+		background-position-x: 82%;
+	}
+}
+
+@media all and (max-width: 1230px) {
+	#consultButton {
+		margin-left: 15px;
+	}
+	.hButtons {
+		margin-left: 5px;
+	}
+}
+
+@media all and (max-width: 1105px) {
+	#headerLogoSmallCoin {
+		display: none;
+	}
+	header {
+		background-image: url("../images/bigTextLogo.png");
+		background-size: 1000px;
+		background-repeat: no-repeat;
+	}
+	#headerButtons {
+		float: left;
+		margin-left: 7%;
+	}
+	#consultButton {
+		margin-left: 30px;
+	}
+}
+
+@media all and (max-width: 1045px) {
+	#headerButtons {
+		margin-left: 1%;
+	}
+	#consultButton {
+		margin-left: 10px;
+	}
+}
+
+@media all and (max-width: 965px) {
+	header {
+		height: fit-content;
+	}
+	main {
+		margin-top: 100px;
+	}
+
+	#unfoldHeaderContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100px;
+		border-bottom: 1px solid black; /*TODO DO THIS IN JS*/
+	}
+	#consultButtonReal {
+
+	}
+	#consultButton {
+		display: none;
+	}
+	#unfoldButton {
+		width: 50px;
+		height: 50px;
+	}
+	#headerButtons {
+		text-align: center;
+		display: none;
+		margin: 0;
+		width: 100%;
+		height: fit-content;
+	}
+	.hButtons {
+		display: inline-block;
+		width: 480px;
+		height: 70px;
+		font-size: 50px;
+	}
+}
+
+
 #backgroundKravchukCoin {
 	text-align: center;
 	height: 600px;
@@ -112,6 +263,29 @@ main {
 	font-family: "Bookman Old Style", serif;
 	font-size: 50px;
 	padding: 50px;
+}
+/*SMALL HIDDEN TEXT*/
+#weSuggestSmallWe {
+	margin-top: 50px;
+}
+.weSuggestSmallText {
+	display: none;
+	font-family: "Bookman Old Style", serif;
+	font-size: 40px;
+	margin-bottom: -20px;
+}
+
+/*TODO DO NOT FORGET ABOUT THIS RESIZE*/
+@media all and (max-width: 905px){
+	#weSuggestText {
+		display: none;
+	}
+	#weSuggestTextHolder {
+		text-align: center;
+	}
+	.weSuggestSmallText {
+		display: block;
+	}
 }
 
 #suggestWrapper {
@@ -437,7 +611,6 @@ main {
 
 
 /*TODO MAKE IT BEHAVE WELL DURING RESIZING*/
-
 
 
 
