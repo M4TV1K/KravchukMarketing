@@ -4,6 +4,9 @@ let yourName, yourPhoneNumber;
 
 let mainBtn, suggestionBtn, blogBtn, btnContacts;
 
+let headerButtons;
+let unfoldBtn, hideUnfoldedPart;
+
 function changeColor(color) {
     textDetails.forEach((element) => {
         element.style.color = color;
@@ -17,32 +20,55 @@ function checkInput(input) {
     return input.value.length > 0;
 }
 
+function orderButtonListener() {
+    window.scrollTo(0, 3426);
+    yourName.focus();
+    hideUnfoldedButtons();
+}
+
 function addEventListenersToButtons() {
     mainBtn = document.querySelector('#mainBtn');
     mainBtn.addEventListener('click', () => {
         window.scrollTo(0, 0);
+        hideUnfoldedButtons();
     });
 
     suggestionBtn = document.querySelector('#suggestionsBtn');
     suggestionBtn.addEventListener('click', ()=> {
         window.scrollTo(0, 597);
+        hideUnfoldedButtons();
     });
 
     blogBtn = document.querySelector('#blogBtn');
     blogBtn.addEventListener('click', () => {
         window.scrollTo(0,1205);
+        hideUnfoldedButtons();
     });
 
     btnContacts = document.querySelector('#btnContacts');
     btnContacts.addEventListener('click', () => {
         window.scrollTo(0,3426);
+        hideUnfoldedButtons();
     });
 
     let btn = document.querySelector('#consultButton');
-    btn.addEventListener('click', () => {
-        window.scrollTo(0, 3426);
-        yourName.focus();
-    })
+    btn.addEventListener('click', orderButtonListener);
+    btn = document.querySelector('#consultButtonReal');
+    btn.addEventListener('click', orderButtonListener);
+
+    /*TODO NEW FEATURE*/
+    unfoldBtn = document.querySelector('#unfoldButton');
+    unfoldBtn.addEventListener('click', () => {
+        console.log(headerButtons.style.display);
+        if (headerButtons.style.display === 'inline') {
+            headerButtons.style.display = 'none';
+            unfoldBtn.style.transform = "scaleY(1)";
+        }
+        else {
+            headerButtons.style.display = 'inline';
+            unfoldBtn.style.transform = "scaleY(-1)";
+        }
+    });
 }
 
 window.onload = () => {
@@ -86,10 +112,42 @@ window.onload = () => {
         }
     });
 
+    /*NEEEEWWWW CODE*/
+    headerButtons = document.querySelector('#headerButtons');
+    if (window.innerWidth > 965) {
+        headerButtons.style.display = 'inline';
+        hideUnfoldedPart = true;
+    }
+    else {
+        headerButtons.style.display = 'none';
+        hideUnfoldedPart = false;
+    }
+
     addEventListenersToButtons();
     window.scrollTo(0,5);
 };
 
+window.onresize = () => {
+    let width = window.innerWidth;
+    console.log("Width: " + width);
+    if (width > 965) {
+        headerButtons.style.display = 'inline';
+        unfoldBtn.style.transform = "scaleY(1)";
+        hideUnfoldedPart = true;
+    }
+    else if (hideUnfoldedPart) {
+        headerButtons.style.display = 'none';
+        hideUnfoldedPart = false;
+    }
+};
+
+function hideUnfoldedButtons() {
+    if (window.innerWidth < 965) {
+        headerButtons.style.display = 'none';
+        unfoldBtn.style.transform = "scaleY(1)";
+        hideUnfoldedPart = false;
+    }
+}
 
 function highlightButton(btnToLightUp) {
     let allButtons = document.querySelectorAll('.hButtons');
@@ -108,6 +166,3 @@ window.onscroll = () => {
     else highlightButton(btnContacts);
 };
 
-window.onresize = () => {
-    console.log("Width: " + window.innerWidth);
-};
