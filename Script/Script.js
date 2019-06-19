@@ -1,5 +1,4 @@
 let textDetails, blogTag;
-let detailsDiv, detailsDivUnfold;
 let yourName, yourPhoneNumber;
 
 let mainBtn, suggestionBtn, blogBtn, btnContacts;
@@ -7,100 +6,37 @@ let mainBtn, suggestionBtn, blogBtn, btnContacts;
 let headerButtons;
 let unfoldBtn, hideUnfoldedPart;
 
-function changeColor(color) {
-    textDetails.forEach((element) => {
-        element.style.color = color;
-    });
-    blogTag.forEach((element) => {
-        element.style.color = color;
-    })
-}
+let upperBackground;
+let backgroundCoin, marketingDiv, contactsContainer;
+let posBackgroundCoin, posMarketingDiv, posOrderButton;
 
-function checkInput(input) {
-    return input.value.length > 0;
-}
-
-function orderButtonListener() {
-    window.scrollTo(0, 3426);
-    yourName.focus();
-    hideUnfoldedButtons();
-}
-
-function addEventListenersToButtons() {
-    mainBtn = document.querySelector('#mainBtn');
-    mainBtn.addEventListener('click', () => {
-        window.scrollTo(0, 0);
-        hideUnfoldedButtons();
-    });
-
-    suggestionBtn = document.querySelector('#suggestionsBtn');
-    suggestionBtn.addEventListener('click', ()=> {
-        window.scrollTo(0, 597);
-        hideUnfoldedButtons();
-    });
-
-    blogBtn = document.querySelector('#blogBtn');
-    blogBtn.addEventListener('click', () => {
-        window.scrollTo(0,1205);
-        hideUnfoldedButtons();
-    });
-
-    btnContacts = document.querySelector('#btnContacts');
-    btnContacts.addEventListener('click', () => {
-        window.scrollTo(0,3426);
-        hideUnfoldedButtons();
-    });
-
-    let btn = document.querySelector('#consultButton');
-    btn.addEventListener('click', orderButtonListener);
-    btn = document.querySelector('#unfoldConsultButton');
-    btn.addEventListener('click', orderButtonListener);
-
-    /*TODO NEW FEATURE*/
-    unfoldBtn = document.querySelector('#unfoldButton');
-    unfoldBtn.addEventListener('click', () => {
-        if (headerButtons.style.display === 'flex') {
-            headerButtons.style.display = 'none';
-            unfoldBtn.style.transform = "scaleY(1)";
-        }
-        else {
-            headerButtons.style.display = 'flex';
-            unfoldBtn.style.transform = "scaleY(-1)";
-        }
-    });
-}
 
 window.onload = () => {
+    upperBackground = document.querySelector('#upperBackground');
+
     textDetails = document.querySelectorAll('.textDetails');
     blogTag = document.querySelectorAll('.blogTag');
-
-    detailsDiv = document.querySelector('#marketingDetails');
-    detailsDivUnfold = document.querySelector('#marketingDetailsUnfold');
 
     yourName = document.querySelector('#yourName');
     yourPhoneNumber = document.querySelector('#yourPhoneNumber');
 
-    detailsDiv.addEventListener('mouseover', () => {
-        changeColor('#ffff00');
-    });
+    /*-----------unfolding hidden details-----------*/
+    let allFoldUnfoldElements = document.querySelectorAll('.detailsM');
+    foldUnfoldElement(allFoldUnfoldElements[0], allFoldUnfoldElements[1], 0);
+    foldUnfoldElement(allFoldUnfoldElements[2], allFoldUnfoldElements[3], 1);
+    foldUnfoldElement(allFoldUnfoldElements[4], allFoldUnfoldElements[5], 2);
+    /*--------END--------*/
 
-    detailsDiv.addEventListener('mouseout', () => {
-        changeColor('#ffffff');
-    });
-
-    detailsDiv.addEventListener('click', () => {
-        detailsDiv.style.display = 'none';
-        detailsDivUnfold.style.display = 'flex';
-    });
-    detailsDivUnfold.addEventListener('click', () => {
-        detailsDivUnfold.style.display = 'none';
-        detailsDiv.style.display = 'flex';
-    });
+    /*-----------Getting Offset-----------*/
+    backgroundCoin = document.querySelector('#backgroundKravchukCoin');
+    marketingDiv = document.querySelector('#kravchukMarketingDiv');
+    contactsContainer = document.querySelector('#contactsContainer');
+    /*-----------Getting Offset-----------*/
 
     let btn = document.querySelector('#makeOrderBtn');
     btn.addEventListener('click',function(e) {
         e.preventDefault();
-        if (checkInput(yourName) && checkInput(yourPhoneNumber)){
+        if (checkName(yourName) && checkNumber(yourPhoneNumber)){
             console.log(yourName.value + ' ' + yourPhoneNumber.value);
             let contactDetails = document.querySelector('#leaveContactDetails');
             let answerHolder = document.querySelector('#enterYourDataContainer');
@@ -122,10 +58,11 @@ window.onload = () => {
     }
 
     addEventListenersToButtons();
+    onResize();
     window.scrollTo(0,5);
 };
 
-window.onresize = () => {
+function onResize() {
     let width = window.innerWidth;
     console.log("Width: " + width);
     if (width > 890) {
@@ -137,7 +74,28 @@ window.onresize = () => {
         headerButtons.style.display = 'none';
         hideUnfoldedPart = false;
     }
+    /*Recalculating*/
+    posBackgroundCoin = backgroundCoin.offsetTop - upperBackground.offsetTop;
+    posMarketingDiv = marketingDiv.offsetTop - upperBackground.offsetTop;
+    posOrderButton = contactsContainer.offsetTop - upperBackground.offsetTop;
+}
+
+window.onresize = onResize;
+window.onscroll = () => {
+    let scrollY = window.scrollY;
+    console.log("Scroll: " + scrollY);
+    if (scrollY < posBackgroundCoin) highlightButton(mainBtn);
+    else if (scrollY >= posBackgroundCoin && scrollY < posMarketingDiv) highlightButton(suggestionBtn);
+    else if (scrollY >= posMarketingDiv && scrollY < posOrderButton - 500) highlightButton(blogBtn);
+    else highlightButton(btnContacts);
 };
+
+function orderButtonListener() {
+    window.scrollTo(0, posOrderButton);
+    yourName.focus();
+    hideUnfoldedButtons();
+}
+
 
 function hideUnfoldedButtons() {
     if (window.innerWidth < 890) {
@@ -155,12 +113,82 @@ function highlightButton(btnToLightUp) {
     btnToLightUp.style.borderBottom = '0.4vw solid #ffff00';
 }
 
-window.onscroll = () => {
-    let scrollY = window.scrollY;
-    console.log("Scroll: " + scrollY);
-    if (scrollY < 597) highlightButton(mainBtn);
-    else if (scrollY >= 597 && scrollY < 1205) highlightButton(suggestionBtn);
-    else if (scrollY >= 1205 && scrollY < 3300) highlightButton(blogBtn);
-    else highlightButton(btnContacts);
-};
+function addEventListenersToButtons() {
+    mainBtn = document.querySelector('#mainBtn');
+    mainBtn.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+        hideUnfoldedButtons();
+    });
 
+    suggestionBtn = document.querySelector('#suggestionsBtn');
+    suggestionBtn.addEventListener('click', ()=> {
+        window.scrollTo(0, posBackgroundCoin);
+        hideUnfoldedButtons();
+    });
+
+    blogBtn = document.querySelector('#blogBtn');
+    blogBtn.addEventListener('click', () => {
+        window.scrollTo(0, posMarketingDiv);
+        hideUnfoldedButtons();
+    });
+
+    btnContacts = document.querySelector('#btnContacts');
+    btnContacts.addEventListener('click', () => {
+        window.scrollTo(0, posOrderButton);
+        hideUnfoldedButtons();
+    });
+
+    let btn = document.querySelector('#consultButton');
+    btn.addEventListener('click', orderButtonListener);
+    btn = document.querySelector('#unfoldConsultButton');
+    btn.addEventListener('click', orderButtonListener);
+
+    unfoldBtn = document.querySelector('#unfoldButton');
+    unfoldBtn.addEventListener('click', () => {
+        if (headerButtons.style.display === 'flex') {
+            headerButtons.style.display = 'none';
+            unfoldBtn.style.transform = "scaleY(1)";
+        }
+        else {
+            headerButtons.style.display = 'flex';
+            unfoldBtn.style.transform = "scaleY(-1)";
+        }
+    });
+}
+
+function foldUnfoldElement(from, to, index) {
+    from.addEventListener('click', () => {
+        from.style.display = 'none';
+        to.style.display = 'flex';
+    });
+    to.addEventListener('click', () => {
+        to.style.display = 'none';
+        from.style.display = 'flex';
+    });
+    from.addEventListener('mouseover', () => {
+        textDetails[index].style.color = '#ffff00';
+        blogTag[index].style.color = '#ffff00';
+    });
+    from.addEventListener('mouseout', () => {
+        textDetails[index].style.color = '#ffffff';
+        blogTag[index].style.color = '#ffffff';
+    });
+}
+
+function checkName(input) {
+    return input.value.length > 0 && input.value.length < 25;
+}
+function checkNumber(input) {
+    let number = input.value;
+    console.log(number + ' ' + number.length);
+    if (number.charAt(0) !== '+') {
+        if (isNaN(number.charAt(0))) {
+            return false;
+        }
+    }
+    if (number.length < 10 || number.length > 13) return false;
+    for (let i = 1; i < number.length; ++i) {
+        if (isNaN(number.charAt(i))) return false;
+    }
+    return true;
+}

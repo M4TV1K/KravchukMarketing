@@ -206,7 +206,7 @@ main {
 }
 
 /*MARKETING DETAILS*/
-#marketingDetails, #marketingDetailsUnfold {
+#marketingDetails {
 	display: flex;
     flex-direction: row;
     justify-content: center;
@@ -271,17 +271,17 @@ main {
 /*UNFOLDED PART*/
 #aboutMarketingUnfold {
 	background-image: url("../images/proMarketingUnfold.png");
+	display: none;
 }
 #aboutSEOUnfold {
 	background-image: url("../images/SEOUnfold.png");
+	display: none;
 }
 #aboutSMMUnfold {
 	background-image: url("../images/SMMUnfold.png");
-}
-
-#marketingDetailsUnfold {
 	display: none;
 }
+
 
 .textDetailsUnfold, .yellowText {
 	font-family: "Sitka Small", serif;
@@ -460,7 +460,7 @@ main {
 }
 
 
-/*Todo Cool resize*/
+/*Responsive Website*/
 @media screen and (max-width: 890px){
     /*TABLETS*/
     header, main, footer {
@@ -555,7 +555,7 @@ main {
 		font-size: 1.8vw;
 	}
 
-	#marketingDetails, #marketingDetailsUnfold {
+	#marketingDetails {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -815,6 +815,8 @@ main {
 		font-size: 4vw;
 		margin-top: 4vw;
 	}
+
+	/*-----------Contacts-----------*/
 	#ourContacts {
 		text-align: center;
 		width: 100%;
@@ -830,8 +832,6 @@ main {
 	.contactInfo {
 		font-size: 3.5vw;
 	}
-
-
 	#footerBackground {
 		display: none;
 	}
