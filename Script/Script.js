@@ -53,19 +53,18 @@ function addEventListenersToButtons() {
 
     let btn = document.querySelector('#consultButton');
     btn.addEventListener('click', orderButtonListener);
-    btn = document.querySelector('#consultButtonReal');
+    btn = document.querySelector('#unfoldConsultButton');
     btn.addEventListener('click', orderButtonListener);
 
     /*TODO NEW FEATURE*/
     unfoldBtn = document.querySelector('#unfoldButton');
     unfoldBtn.addEventListener('click', () => {
-        console.log(headerButtons.style.display);
-        if (headerButtons.style.display === 'inline') {
+        if (headerButtons.style.display === 'flex') {
             headerButtons.style.display = 'none';
             unfoldBtn.style.transform = "scaleY(1)";
         }
         else {
-            headerButtons.style.display = 'inline';
+            headerButtons.style.display = 'flex';
             unfoldBtn.style.transform = "scaleY(-1)";
         }
     });
@@ -91,11 +90,11 @@ window.onload = () => {
 
     detailsDiv.addEventListener('click', () => {
         detailsDiv.style.display = 'none';
-        detailsDivUnfold.style.display = 'inline-block';
+        detailsDivUnfold.style.display = 'flex';
     });
     detailsDivUnfold.addEventListener('click', () => {
         detailsDivUnfold.style.display = 'none';
-        detailsDiv.style.display = 'inline-block';
+        detailsDiv.style.display = 'flex';
     });
 
     let btn = document.querySelector('#makeOrderBtn');
@@ -112,10 +111,9 @@ window.onload = () => {
         }
     });
 
-    /*NEEEEWWWW CODE*/
     headerButtons = document.querySelector('#headerButtons');
-    if (window.innerWidth > 965) {
-        headerButtons.style.display = 'inline';
+    if (window.innerWidth > 890) {
+        headerButtons.style.display = 'flex';
         hideUnfoldedPart = true;
     }
     else {
@@ -130,8 +128,8 @@ window.onload = () => {
 window.onresize = () => {
     let width = window.innerWidth;
     console.log("Width: " + width);
-    if (width > 965) {
-        headerButtons.style.display = 'inline';
+    if (width > 890) {
+        headerButtons.style.display = 'flex';
         unfoldBtn.style.transform = "scaleY(1)";
         hideUnfoldedPart = true;
     }
@@ -142,7 +140,7 @@ window.onresize = () => {
 };
 
 function hideUnfoldedButtons() {
-    if (window.innerWidth < 965) {
+    if (window.innerWidth < 890) {
         headerButtons.style.display = 'none';
         unfoldBtn.style.transform = "scaleY(1)";
         hideUnfoldedPart = false;
@@ -154,7 +152,7 @@ function highlightButton(btnToLightUp) {
     allButtons.forEach((btn) => {
         btn.style.border = 'none';
     });
-    btnToLightUp.style.borderBottom = '7px solid #ffff00';
+    btnToLightUp.style.borderBottom = '0.4vw solid #ffff00';
 }
 
 window.onscroll = () => {

@@ -1,5 +1,8 @@
+html {
+    font-size: 2vw;
+}
+
 html, body {
-	min-width: 500px;
 	margin: 0;
 	padding: 0;
 }
@@ -7,48 +10,44 @@ html, body {
 /*HEADER PART*/
 header {
 	position: fixed;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 120px;
-	background: white;
+	height: 6vw;
+    background: white;
 	box-shadow: 0 2px 5px 2px #999999;
 	-moz-box-shadow: 0 2px 5px 2px #999999;
 	-webkit-box-shadow: 0 2px 5px 2px #999999;
+    border: 2px solid black;
 }
 
 #headerLogo {
 	position: relative;
-	min-width: 475px;
-	width: 26.3%;
-	height: 62px;
-	margin: 30px 30px 30px 3.5%;
-}
-/*small version*/
-#headerLogoSmallCoin {
-	position: relative;
-	display: none;
-	width: 76px;
-	height: 75px;
-	margin: 25px 30px 30px 11.3%;
+	width: 25vw;
+	height: 3.23vw;
+	margin: 2.1vw 2vw 2vw 5vw;
 }
 
 #headerButtons {
-	float: right;
-	margin-right: 275px;
-	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 60%;
+    margin-right: 5vw;
 }
 
 .hButtons {
-	position: relative;
-	border: none;
+    border: none;
 	outline: none;
 	font-family: "Bookman Old Style", serif;
 	font-weight: bold;
-	margin: 18px 0 18px 25px;
+	margin: 15px 0 18px 2.2%;
 	width: fit-content;
-	height: 50px;
-	font-size: 30px;
+	height: 2.3vw;
+    font-size: 1.6vw;
 	background: transparent;
 }
 
@@ -60,19 +59,15 @@ header {
 	font-family: "Bookman Old Style", serif;
 	border: none;
 	outline: none;
-	padding: 15px;
 	border-radius: 4px;
 	background-color: #ffff00;
 }
 
 #consultButton {
-	position: relative;
-	float: right;
-	height: 50px;
-	margin-top: 20px;
-	margin-left: 60px;
-	margin-right: -140px;
-	font-size: 18px;
+	width: 17vw;
+	height: 3vw;
+    margin-left: 5%;
+	font-size: 0.92vw;
 }
 
 #unfoldHeaderContainer {
@@ -80,9 +75,6 @@ header {
 	width: 100%;
 }
 
-#consultButtonReal {
-	font-size: 18px;
-}
 #unfoldButton {
 	background-image: url("../images/UnfoldButton.png");
 	background-color: transparent;
@@ -92,10 +84,10 @@ header {
 }
 
 #makeOrderBtn {
-	margin-top: 40px;
-	width: 350px;
-	font-size: 18px;
-	height: 55px;
+	margin-top: 2.05vw;
+	width: 18vw;
+	font-size: 1.1vw;
+	height: 3vw;
 }
 
 #consultButton:active, #makeOrderBtn:active {
@@ -105,260 +97,120 @@ header {
 /*MAIN PART*/
 main {
 	text-align: center;
-	margin-top: 120px;
+	margin-top: 6vw;
 	width: 100%;
 	min-height: 100%;
 }
 
-#upperBackgroundCont {
+#upperBackground {
 	width: 100%;
-	height: 600px;
-	background-image: url("../images/HeaderBackground.png");
-	background-size: 100%;
-	background-position-y: 45%;
+    height: 30vw;
+    background-size: 100%;
+	background-position-x: 50%;
+    background-position-y: 40%;
+    background-image: url("../images/HeaderBackground.png");
 }
-
-
-/*TODO RESIZE*/
-@media all and (max-width: 1785px) {
-	#headerLogo {
-		margin-left: 1%;
-	}
-	#consultButton {
-		margin-right: -250px;
-	}
-}
-
-@media all and (max-width: 1630px) {
-	#consultButton {
-		margin-left: 15px;
-	}
-}
-
-@media all and (max-width: 1560px) {
-	.hButtons {
-		margin-left: 5px;
-	}
-}
-
-@media all and (max-width: 1478px){
-	#headerLogo {
-		display: none;
-	}
-	#headerLogoSmallCoin {
-		display: inline;
-	}
-	#consultButton {
-		margin-left: 60px;
-	}
-	.hButtons {
-		margin-left: 25px;
-	}
-}
-
-@media all and (max-width: 1405px) {
-	#headerLogoSmallCoin {
-		margin-left: 3.5%;
-	}
-	/*TODO TUT*/
-	#upperBackgroundCont {
-		background-position-x: 82%;
-	}
-}
-
-@media all and (max-width: 1230px) {
-	#consultButton {
-		margin-left: 15px;
-	}
-	.hButtons {
-		margin-left: 5px;
-	}
-}
-
-@media all and (max-width: 1105px) {
-	#headerLogoSmallCoin {
-		display: none;
-	}
-	header {
-		background-image: url("../images/bigTextLogo.png");
-		background-size: 1000px;
-		background-repeat: no-repeat;
-	}
-	#headerButtons {
-		float: left;
-		margin-left: 7%;
-	}
-	#consultButton {
-		margin-left: 30px;
-	}
-}
-
-@media all and (max-width: 1045px) {
-	#headerButtons {
-		margin-left: 1%;
-	}
-	#consultButton {
-		margin-left: 10px;
-	}
-}
-
-@media all and (max-width: 965px) {
-	header {
-		height: fit-content;
-	}
-	main {
-		margin-top: 100px;
-	}
-
-	#unfoldHeaderContainer {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100px;
-		border-bottom: 1px solid black; /*TODO DO THIS IN JS*/
-	}
-	#consultButtonReal {
-
-	}
-	#consultButton {
-		display: none;
-	}
-	#unfoldButton {
-		width: 50px;
-		height: 50px;
-	}
-	#headerButtons {
-		text-align: center;
-		display: none;
-		margin: 0;
-		width: 100%;
-		height: fit-content;
-	}
-	.hButtons {
-		display: inline-block;
-		width: 320px;
-		height: 70px;
-		font-size: 30px;
-	}
-}
-
 
 #backgroundKravchukCoin {
 	text-align: center;
-	height: 600px;
+    width: 100%;
+    height: 31.5vw;
 	background-image: url("../images/KravchukCoin.png");
 	background-repeat: no-repeat;
-	background-size: 612px;
+	background-size: 32.2%;
 	background-position-y: 100%;
 	background-position-x: 50%;
 }
 
 #weSuggestTextHolder {
 	background-color: rgba(255, 255, 255, 0.85);
-	height: 230px;
-	padding: 25px;
+    width: 100%;
+	height: 12vw;
+    padding-top: 1.3vw;
+    padding-bottom: 1.3vw;
 }
 
 #weSuggestText {
 	font-family: "Bookman Old Style", serif;
-	font-size: 50px;
-	padding: 50px;
-}
-/*SMALL HIDDEN TEXT*/
-#weSuggestSmallWe {
-	margin-top: 50px;
-}
-.weSuggestSmallText {
-	display: none;
-	font-family: "Bookman Old Style", serif;
-	font-size: 40px;
-	margin-bottom: -20px;
-}
-
-/*TODO DO NOT FORGET ABOUT THIS RESIZE*/
-@media all and (max-width: 905px){
-	#weSuggestText {
-		display: none;
-	}
-	#weSuggestTextHolder {
-		text-align: center;
-	}
-	.weSuggestSmallText {
-		display: block;
-	}
+	font-size: 2.6vw;
+	padding: 2.6vw;
 }
 
 #suggestWrapper {
 	width: 100%;
+	height: fit-content;
 	background-color: rgba(255, 255, 0, 0.85);
 }
 
 #weSuggestDiv {
-	display: inline-block;
-	height: 250px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 13.5vw;
 }
 
 .suggestionDiv {
-	float: left;
-	width: 270px;
-	margin: 40px 15px 15px 15px;
+	width: 14.1vw;
+	margin: 1.6vw 0.9vw 0.9vw 0.9vw;
 }
 
 .suggestionTextH {
 	font-family: "Bookman Old Style", serif;
-	padding: 10px;
+	padding: 0.55vw;
+    font-size: 1.25vw;
 }
 
 .suggestionLine {
-	margin-left: 110px;
-	margin-right: 110px;
-	margin-top: -15px;
+	margin-left: 5.5vw;
+	margin-right: 5.5vw;
+	margin-top: -1vw;
 	border-color: #adadad;
 }
 
 .suggestionText {
 	font-family: "Sitka Text", serif;
-	font-size: 18px;
+	font-size: 0.95vw;
 }
 
 #whiteEmptiness {
 	width: 100%;
-	height: 66px;
+	height: 3.5vw;
 	background-color: rgba(255, 255, 255, 0.85);
 }
 
 #kravchukMarketingDiv {
 	text-align: center;
-	margin-top: -40px;
 	width: 100%;
-	height: 500px;
+    height: 27vw;
+    margin-top: -2.2vw;
+	background-size: 100%;
+	background-position-x: 50%;
+	background-position-y: 100%;
 	background-repeat: no-repeat;
-	background-size: 100% 500px;
 	background-image: url("../images/UnityPower.png");
 }
 
 #kravchukTag {
-	padding-top: 220px;
+	padding-top: 11.4vw;
 	font-family: "Sitka Heading", serif;
-	font-size: 60px;
+	font-size: 4.3vw;
 	color: #ffff00;
 }
 
 #kravchukText {
-	margin-top: -25px;
+	margin-top: -1.4vw;
 	font-weight: bold;
 	font-family: "Sitka Heading", serif;;
-	font-size: 20px;
+	font-size: 1.3vw;
 	color: #ffffff;
 }
 
 /*MARKETING DETAILS*/
 #marketingDetails, #marketingDetailsUnfold {
-	display: inline-block;
-	text-align: center;
-	width: 879px;
-	height: 592px;
-	margin-top: 50px;
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3vw;
 }
 
 #aboutMarketing {
@@ -370,49 +222,50 @@ main {
 #aboutSMM {
 	background-image: url("../images/SMM.png");
 }
-.detailsM {
-	text-align: center;
-	float: left;
-	width: 293px;
-	height: 592px;
-	margin-left: -2px;
-}
 
-.detailsContent {
-	text-align: left;
-	display: inline-block;
+.detailsM {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 26vw;
+    height: 43vw;
+	margin-left: -2px;
+    background-size: 100% 100%;
 }
 
 .blogTag {
+	text-align: left;
 	font-family: "Sitka Small", serif;
 	color: #ffffff;
-	font-size: 12px;
-	padding-top: 15px;
+	width: 70%;
+	font-size: 1.15vw;
+	padding-top: 0.3vw;
 }
 
 .photosInDetails {
-	margin-top: 10px;
+	width: 18.2vw;
+	margin-top: 0.4vw;
 }
 
 .headerDetails {
 	text-align: center;
 	font-weight: bold;
-	border: 3px solid #ffff00;
+	width: 70%;
+	height: 4.5vw;
+	font-size: 1.32vw;
 	color: #ffff00;
-	padding: 10px;
-	font-size: 16px;
-	width: 205px;
-	height: 47px;
+	border: 3px solid #ffff00;
 }
 
 .textDetails {
+    text-align: left;
 	font-family: "Sitka Small", serif;
 	color: #ffffff;
-	font-size: 15px;
+	font-size: 1.1vw;
 }
 .unfold {
 	color: #797777;
-	font-size: 11px;
+	font-size: 0.9vw;
 }
 
 /*UNFOLDED PART*/
@@ -432,7 +285,8 @@ main {
 
 .textDetailsUnfold, .yellowText {
 	font-family: "Sitka Small", serif;
-	font-size: 10px;
+	width: 92%;
+	font-size: 0.9vw;
 }
 .textDetailsUnfold {
 	color: #ffffff;
@@ -442,107 +296,102 @@ main {
 	color: #ffff00;
 }
 
-
-
 /*BEFORE FOOTER PART*/
 #whyUsHeader {
-	margin-top: 120px;
-	font-family: "Sitka Small", serif;
-	font-size: 45px;
+	margin-top: 6.25vw;
+	font-size: 2.35vw;
 }
 
 #whyUsDiv {
-	margin-top: -35px;
+	margin-top: -1.8vw;
 	width: 99.9%;
-	height: 1500px;
+	height: 81vw;
 	background-image: url("../images/YellowRectangles.png");
 	background-size: 100%;
 	background-position-y: 95%;
-	background-repeat: repeat-x;
-	border: 1px solid transparent;
+	background-repeat: no-repeat;
 }
 
 #personalApproach {
 	text-align: left;
-	width: 500px;
-	margin-top: 160px;
-	margin-bottom: 20px;
-	margin-left: 16%;
+	width: fit-content;
+	margin-top: 14vw;
+	margin-bottom: 1vw;
+	margin-left: 15.8vw;
 }
 
 #system {
 	float: right;
-	right: 0;
-	width: 500px;
+	width: fit-content;
 	text-align: right;
-	margin-top: 25px;
-	margin-right: 17%;
+	margin-top: 1.8vw;
+	margin-right: 15vw;
 }
 
 #businessUnderKey {
-	width: 500px;
+	width: fit-content;
 	text-align: left;
-	margin-top: 275px;
-	margin-left: 23%;
+	margin-top: 14.35vw;
+	margin-left: 23vw;
 }
 
 .whyUsHeaders {
 	font-family: "Sitka Small", serif;
-	font-size: 32px;
-}
-
-.whyUsText {
-	font-family: "Sitka Small", serif;
-	padding-top: 15px;
-	font-size: 20px;
+	font-size: 2.2vw;
 }
 
 .whyUsLineLeft {
 	border: 0.5px solid black;
-	margin-right: 400px;
-	margin-top: -20px;
+	margin-right: 15vw;
+	margin-top: -1vw;
 }
 
 #whyUsLineRight{
 	border: 0.5px solid black;
-	margin-left: 400px;
-	margin-top: -20px;
+	margin-left: 22vw;
+	margin-top: -1.2vw;
+}
+
+.whyUsText {
+	font-family: "Sitka Small", serif;
+	padding-top: 0.8vw;
+	font-size: 1.4vw;
 }
 
 #contactsContainer {
-	margin-top: -150px;
-	height: 500px;
+	margin-top: -8vw;
+	height: 24vw;
 	width: 100%;
 }
 
 #leaveContactDetails {
 	float: left;
 	margin-left: 20%;
-	margin-top: -30px;
+	margin-top: -1.2vw;
 }
 
 #biggerTextQuestion {
 	font-family: "Sitka Text", serif;
-	font-size: 30px;
+	font-size: 1.56vw;
 	font-weight: bold;
 }
 
 #leaveContactText {
 	font-family: "Sitka Text", serif;
-	font-size: 23px;
+	font-size: 1.2vw;
 	font-weight: bold;
-	margin-top: -20px;
+	margin-top: -1vw;
 }
 
 .inputBox {
 	border: 1px solid black;
 	border-radius: 4px;
 	font-family: "Sitka Small", serif;
-	font-size: 18px;
-	width: 380px;
-	height: 40px;
-	padding: 5px;
-	margin-top: 5px;
+	font-size: 0.95vw;
+	width: 19.5vw;
+	height: 2.25vw;
+	padding: 0.3vw;
+	margin-top: 0.3vw;
 }
 
 .inputBox:invalid {
@@ -555,39 +404,41 @@ main {
 }
 
 #yourPhoneNumber {
-	margin-top: 13px;
+	margin-top: 0.7vw;
 }
 
 #ourContacts {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	float: right;
 	text-align: left;
-	margin-top: 200px;
-	width: 680px;
-	height: 150px;
+	margin-top: 10vw;
+ 	width: 40vw;
+	height: 9.5vw;
 	background-color: #ffff00;
 }
 
-#topContainer {
-	margin-top: 20px;
+.dataContainer {
+	margin-left: 2.1vw;
 }
 
-.dataContainer {
-	margin-left: 40px;
+.contactImg {
+	width: 1.1vw;
 }
 
 .contactInfo {
 	font-family: "Sitka Text", serif;
 	font-weight: bold;
-	font-size: 18px;
-	margin-bottom: -5px;
+	font-size: 0.95vw;
 }
 
 #dataHasBeenSent {
 	text-align: center;
-	width: 400px;
-	height: 150px;
+	width: 20vw;
+	height: 7.5vw;
 	border: 1px solid transparent;
-	margin-top: 40px;
+	margin-top: 2vw;
 	background-image: url("../images/TickIcon.png");
 	background-repeat: no-repeat;
 	background-size: 39%;
@@ -596,13 +447,12 @@ main {
 
 #headerDataSent {
 	font-family: "Sitka Small", serif;
-	font-size: 26px;
+	font-size: 1.4vw;
 }
 
 #footerBackground {
 	position: relative;
-	margin-top: -100px;
-	height: 180px;
+	height: 10.85vw;
 	background-image: url("../images/bigTextLogo.png");
 	background-repeat: no-repeat;
 	background-position-x: 50%;
@@ -610,12 +460,379 @@ main {
 }
 
 
-/*TODO MAKE IT BEHAVE WELL DURING RESIZING*/
+/*Todo Cool resize*/
+@media screen and (max-width: 890px){
+    /*TABLETS*/
+    header, main, footer {
+        width: 100%;
+    }
+    header {
+        display: inline;
+		height: fit-content;
+    }
+    #headerLogo, #consultButton {
+        display: none;
+    }
+
+	#unfoldHeaderContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 8vw;
+        border-bottom: 1px solid #999999;
+    }
+	#unfoldHeaderLogo {
+		width: 30vw;
+		height: auto;
+		margin-left: 1.75vw;
+	}
+	#unfoldConsultButton {
+        font-size: 2.7vw;
+        height: 6vw;
+    }
+    #unfoldButton {
+        width: 6vw;
+        height: 6vw;
+		margin-right: 3.6%;
+    }
+    #headerButtons {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        margin: 0;
+    }
+    .hButtons {
+		margin: 0;
+		width: fit-content;
+		height: 8vw;
+		font-size: 4.5vw;
+    }
 
 
+	main {
+		margin-top: 8vw;
+	}
 
-@media all and (max-width: 1500px) {
-	#upperBackgroundCont {
-		background-size: 1500px;
+	#backgroundKravchukCoin {
+		background-size: 33%;
+		background-position-y: 10%;
+	}
+	#weSuggestTextHolder {
+		height: 13vw;
+	}
+	#weSuggestDiv {
+		height: 16vw;
+	}
+	.suggestionDiv {
+		width: fit-content;
+	}
+	#weSuggestText {
+		font-size: 3.65vw;
+	}
+	.suggestionTextH {
+		margin-top: 0.1vw;
+		font-size: 1.7vw;
+	}
+	.suggestionText {
+		font-size: 1.4vw;
+	}
+	#whiteEmptiness {
+		display: none;
+	}
+
+	#kravchukMarketingDiv {
+		margin-top: 1vw;
+	}
+	#kravchukTag {
+		padding-top: 8vw;
+		font-size: 5.25vw;
+	}
+	#kravchukText {
+		font-size: 1.8vw;
+	}
+
+	#marketingDetails, #marketingDetailsUnfold {
+		flex-direction: column;
+		align-items: center;
+	}
+	.detailsM {
+		width: 40%;
+		height: 70vw;
+	}
+	.blogTag {
+		font-size: 1.5vw;
+		margin-top: 3vw;
+	}
+	.photosInDetails {
+		width: 70%;
+		margin-top: 1vw;
+	}
+	.headerDetails {
+		font-size: 2.2vw;
+		height: 8vw;
+	}
+	.textDetails {
+		font-size: 1.8vw;
+	}
+	.unfold {
+		font-size: 1.6vw;
+	}
+	.textDetailsUnfold, .yellowText {
+		font-size: 1.399vw;
+	}
+	#aboutSEO, #aboutSEOUnfold, #aboutSMM, #aboutSMMUnfold {
+		margin-top: 15px;
+	}
+
+	#whyUsHeader {
+		font-size: 3.35vw;
+	}
+	.whyUsHeaders {
+		font-size: 2.9vw;
+	}
+	.whyUsLineLeft {
+		margin-right: 9vw;
+	}
+	.whyUsText {
+		font-size: 1.6vw;
+	}
+	#businessUnderKey {
+		margin-left: 10vw;
+	}
+
+
+	#leaveContactDetails {
+		margin-left: 15%;
+	}
+	#biggerTextQuestion {
+		font-size: 2vw;
+	}
+	#leaveContactText {
+		font-size: 1.55vw;
+	}
+	.inputBox {
+		width: 25vw;
+		height: 2.75vw;
+		font-size: 1.2vw;
+	}
+	#makeOrderBtn {
+		width: 22vw;
+		height: 4vw;
+		font-size: 1.45vw;
+	}
+	#dataHasBeenSent {
+		width: 24vw;
+		height: 9.5vw;
+	}
+	#headerDataSent {
+		font-size: 1.73vw;
+	}
+
+
+	#ourContacts {
+		height: 11vw;
+	}
+	.contactInfo {
+		font-size: 1.4vw;
+	}
+}
+
+@media screen and (max-width: 535px) {
+	#unfoldHeaderContainer {
+		width: 100%;
+		height: 13vw;
+	}
+	#unfoldHeaderLogo {
+		width: 34vw;
+	}
+	#unfoldConsultButton {
+		font-size: 3vw;
+		height: 8.5vw;
+	}
+	#unfoldButton {
+		margin-right: 1.5%;
+	}
+	.hButtons {
+		height: 8vw;
+		font-size: 6vw;
+	}
+	#upperBackground {
+		margin-top: 13vw;
+	}
+
+	/*--------------RESIZING WE SUGGEST--------------*/
+	#backgroundKravchukCoin {
+		background-image: none;
+	}
+	#weSuggestTextHolder {
+		height: 19.5vw;
+	}
+	#weSuggestText {
+		font-size: 6vw;
+	}
+	#suggestWrapper {
+		background-image: url("../images/KravchukCoin.png");
+		background-repeat: space;
+		background-size: 75%;
+		background-position-y: 100%;
+		background-position-x: 50%;
+	}
+	#weSuggestDiv {
+		display: flex;
+		flex-wrap: wrap;
+		height: fit-content;
+		background-color: rgba(255, 255, 0, 0.85);
+	}
+	.suggestionDiv {
+		width: 100%;
+	}
+	.suggestionTextH {
+		font-size: 5vw;
+	}
+	.suggestionLine {
+		margin-left: 35%;
+		margin-right: 35%;
+	}
+	.suggestionText {
+		font-size: 4vw;
+	}
+
+	/*-----------KRAVCHUK MARKETING DIV-----------*/
+	#kravchukMarketingDiv {
+		margin-top: 150vw;
+	}
+	#kravchukTag {
+		font-size: 8vw;
+		margin-bottom: 1vw;
+	}
+	#kravchukText {
+		font-size: 2.8vw;
+	}
+
+	.detailsM {
+		width: 100%;
+		height: 160vw;
+	}
+	.blogTag {
+		font-size: 5vw;
+		margin-top: 5.8vw;
+	}
+	.headerDetails {
+		font-size: 5.2vw;
+		height: 19vw;
+	}
+	.textDetails {
+		font-size: 3.8vw;
+		margin: 0;
+	}
+	.unfold {
+		font-size: 3.4vw;
+	}
+	.textDetailsUnfold, .yellowText {
+		font-size: 3.4vw;
+	}
+
+	/*-----------WHY KRAVCHUK-MARKETING-----------*/
+	#whyUsDiv {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 4vw;
+		width: 100%;
+		height: fit-content;
+		background-image: none;
+		background-color: #ffff00;
+		padding-top: 5vw;
+	}
+
+	#whyUsHeader {
+		font-size: 5vw;
+		margin: 0;
+		padding: 0;
+	}
+
+	#personalApproach, #system, #businessUnderKey {
+		text-align: center;
+		margin: 0;
+		width: 100%;
+	}
+
+	.whyUsHeaders {
+		font-size: 5vw;
+	}
+
+	.whyUsLineLeft, #whyUsLineRight {
+		margin-right: 9vw;
+		margin-left: 9vw;
+		margin-top: -4vw;
+	}
+
+	.whyUsText {
+		font-size: 3.3vw;
+	}
+	/*---------Make Order Part---------*/
+	#contactsContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 3vw;
+		height: fit-content;
+	}
+	#leaveContactDetails {
+		text-align: center;
+		margin-left: 0;
+	}
+	#biggerTextQuestion {
+		font-size: 4.5vw;
+	}
+	#leaveContactText {
+		font-size: 3.3vw;
+	}
+	.inputBox {
+		width: 50vw;
+		height: 6vw;
+		font-size: 3vw;
+	}
+	#makeOrderBtn {
+		width: 60vw;
+		height: 10vw;
+		font-size: 4.5vw;
+		margin-top: 4vw;
+	}
+	#dataHasBeenSent {
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: fit-content;
+		background-size: 29%;
+	}
+	#headerDataSent {
+		font-size: 4vw;
+		margin-top: 4vw;
+	}
+	#ourContacts {
+		text-align: center;
+		width: 100%;
+		margin-top: 6vw;
+		height: fit-content;
+	}
+	.dataContainer {
+		height: 6vw;
+	}
+	.contactImg {
+		width: 3vw;
+	}
+	.contactInfo {
+		font-size: 3.5vw;
+	}
+
+
+	#footerBackground {
+		display: none;
 	}
 }
