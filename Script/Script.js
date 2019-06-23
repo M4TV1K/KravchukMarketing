@@ -25,7 +25,7 @@ window.onload = () => {
     foldUnfoldElement(allFoldUnfoldElements[0], allFoldUnfoldElements[1], 0);
     foldUnfoldElement(allFoldUnfoldElements[2], allFoldUnfoldElements[3], 1);
     foldUnfoldElement(allFoldUnfoldElements[4], allFoldUnfoldElements[5], 2);
-    /*--------END--------*/
+    /*-----------unfolding hidden details-----------*/
 
     /*-----------Getting Offset-----------*/
     backgroundCoin = document.querySelector('#backgroundKravchukCoin');
@@ -35,7 +35,7 @@ window.onload = () => {
 
     let btn = document.querySelector('#makeOrderBtn');
     btn.addEventListener('click',function(e) {
-        e.preventDefault();
+        e.preventDefault(); /*IMPORTANT, REMOVE IT IF YOU WANT TO MAKE IT IN BACKEND PART*/
         if (checkName(yourName) && checkNumber(yourPhoneNumber)){
             console.log(yourName.value + ' ' + yourPhoneNumber.value);
             let contactDetails = document.querySelector('#leaveContactDetails');
@@ -64,7 +64,6 @@ window.onload = () => {
 
 function onResize() {
     let width = window.innerWidth;
-    console.log("Width: " + width);
     if (width > 890) {
         headerButtons.style.display = 'flex';
         unfoldBtn.style.transform = "scaleY(1)";
@@ -83,19 +82,19 @@ function onResize() {
 window.onresize = onResize;
 window.onscroll = () => {
     let scrollY = window.scrollY;
-    console.log("Scroll: " + scrollY);
     if (scrollY < posBackgroundCoin) highlightButton(mainBtn);
     else if (scrollY >= posBackgroundCoin && scrollY < posMarketingDiv) highlightButton(suggestionBtn);
     else if (scrollY >= posMarketingDiv && scrollY < posOrderButton - 500) highlightButton(blogBtn);
     else highlightButton(btnContacts);
+    hideButtonsOnScrolling(scrollY);
 };
 
-function orderButtonListener() {
-    window.scrollTo(0, posOrderButton);
-    yourName.focus();
-    hideUnfoldedButtons();
+let oldScroll;
+function hideButtonsOnScrolling(scroll) {
+    if (window.innerWidth < 890 && Math.abs(scroll - oldScroll) > 150) {
+        hideUnfoldedButtons();
+    }
 }
-
 
 function hideUnfoldedButtons() {
     if (window.innerWidth < 890) {
@@ -103,6 +102,13 @@ function hideUnfoldedButtons() {
         unfoldBtn.style.transform = "scaleY(1)";
         hideUnfoldedPart = false;
     }
+}
+
+
+function orderButtonListener() {
+    window.scrollTo(0, posOrderButton);
+    yourName.focus();
+    hideUnfoldedButtons();
 }
 
 function highlightButton(btnToLightUp) {
@@ -152,6 +158,7 @@ function addEventListenersToButtons() {
         else {
             headerButtons.style.display = 'flex';
             unfoldBtn.style.transform = "scaleY(-1)";
+            oldScroll = window.scrollY;
         }
     });
 }

@@ -21,7 +21,6 @@ header {
 	box-shadow: 0 2px 5px 2px #999999;
 	-moz-box-shadow: 0 2px 5px 2px #999999;
 	-webkit-box-shadow: 0 2px 5px 2px #999999;
-    border: 2px solid black;
 }
 
 #headerLogo {
@@ -428,7 +427,8 @@ main {
 }
 
 .contactInfo {
-	font-family: "Sitka Text", serif;
+    color: black;
+    font-family: "Sitka Text", serif;
 	font-weight: bold;
 	font-size: 0.95vw;
 }
