@@ -122,25 +122,25 @@ function highlightButton(btnToLightUp) {
 function addEventListenersToButtons() {
     mainBtn = document.querySelector('#mainBtn');
     mainBtn.addEventListener('click', () => {
-        window.scrollTo(0, 0);
+        window.location.href = '#upperBackground';
         hideUnfoldedButtons();
     });
 
     suggestionBtn = document.querySelector('#suggestionsBtn');
     suggestionBtn.addEventListener('click', ()=> {
-        window.scrollTo(0, posBackgroundCoin);
+        window.location.href = '#backgroundKravchukCoin';
         hideUnfoldedButtons();
     });
 
     blogBtn = document.querySelector('#blogBtn');
     blogBtn.addEventListener('click', () => {
-        window.scrollTo(0, posMarketingDiv);
+        window.location.href = '#kravchukMarketingDiv';
         hideUnfoldedButtons();
     });
 
     btnContacts = document.querySelector('#btnContacts');
     btnContacts.addEventListener('click', () => {
-        window.scrollTo(0, posOrderButton);
+        window.location.href =  '#contactsContainer';
         hideUnfoldedButtons();
     });
 
