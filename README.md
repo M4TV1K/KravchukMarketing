@@ -7,7 +7,9 @@ Simple layout for landing page project which main target is to reach customers w
 ## Implementation
 This website is made using HTML5, CSS3, and JavaScript. The main feature here is the adaptive design that works good on desktop, tablets and mobile devices as well.
 
-### Desktop
+# Interface
+
+## Desktop
 
 ![Image of the website](/Readme%20Purpose/Image1.PNG)
 
@@ -19,13 +21,13 @@ This website is made using HTML5, CSS3, and JavaScript. The main feature here is
 
 ![Image of the website](/Readme%20Purpose/Image5.PNG)
 
-### Tablet
+## Tablet
 
 ![Image of the website](/Readme%20Purpose/Tablet1.PNG)
 
 ![Image of the website](/Readme%20Purpose/Tablet2.PNG)
 
-### Mobile
+## Mobile
 
 ![Image of the website](/Readme%20Purpose/Mobile1.PNG)
 
