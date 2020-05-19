@@ -9,24 +9,24 @@ This website is made using HTML5, CSS3, and JavaScript. The main feature here is
 
 ### Desktop
 
-![Image of the website](/Readme%20Purpose/Image1.png)
+![Image of the website](/Readme%20Purpose/Image1.PNG)
 
-![Image of the website](/Readme%20Purpose/Image2.png)
+![Image of the website](/Readme%20Purpose/Image2.PNG)
 
-![Image of the website](/Readme%20Purpose/Image3.png)
+![Image of the website](/Readme%20Purpose/Image3.PNG)
 
-![Image of the website](/Readme%20Purpose/Image4.png)
+![Image of the website](/Readme%20Purpose/Image4.PNG)
 
-![Image of the website](/Readme%20Purpose/Image5.png)
+![Image of the website](/Readme%20Purpose/Image5.PNG)
 
 ### Tablet
 
-![Image of the website](/Readme Purpose/Tablet1.png)
+![Image of the website](/Readme%20Purpose/Tablet1.PNG)
 
-![Image of the website](/Readme Purpose/Tablet2.png)
+![Image of the website](/Readme%20Purpose/Tablet2.PNG)
 
 ### Mobile
 
-![Image of the website](/Readme Purpose/Mobile1.png)
+![Image of the website](/Readme%20Purpose/Mobile1.PNG)
 
-![Image of the website](/Readme Purpose/Mobile2.png)
+![Image of the website](/Readme%20Purpose/Mobile2.PNG)
