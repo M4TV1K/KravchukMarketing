@@ -9,15 +9,15 @@ This website is made using HTML5, CSS3, and JavaScript. The main feature here is
 
 ### Desktop
 
-![Image of the website](/Readme Purpose/Image1.png)
+![Image of the website](/Readme%20Purpose/Image1.png)
 
-![Image of the website](/Readme Purpose/Image2.png)
+![Image of the website](/Readme%20Purpose/Image2.png)
 
-![Image of the website](/Readme Purpose/Image3.png)
+![Image of the website](/Readme%20Purpose/Image3.png)
 
-![Image of the website](/Readme Purpose/Image4.png)
+![Image of the website](/Readme%20Purpose/Image4.png)
 
-![Image of the website](/Readme Purpose/Image5.png)
+![Image of the website](/Readme%20Purpose/Image5.png)
 
 ### Tablet
 
